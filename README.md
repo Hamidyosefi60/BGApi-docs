@@ -14,6 +14,17 @@
     * [Delete an advertisement](#delete-an-advertisement)
     * [Update equation](#update-equation)
     * [Specified equation](#specified-equation)
+ * [Wallet](#wallet)
+ * [Codes](#codes)
+    * [Create a WB code](#create-a-wb-code)
+    * [Apply WB code](#apply-wb-code)
+    * [Currency Balance](#currency-balance)
+    * [Generate address](#generate-address)
+    * [Create Withdraw](#create-withdraw)
+    * [Transactions](#Transactions)
+    * [Adresses](#Adresses)
+ * [Trade](#trade)
+    * [Deals](#deals)
 ## General
 
 ### Payment methods
@@ -370,7 +381,7 @@ curl --location -g --request POST 'https://api.bitcoin.global/api/v1/ad-equation
 --data-urlencode 'price_equation=btc_in_usd*USD_in_EUR*1.12'
 ```
 ### Specified equation
-   #### POST/api/v1/ad-delete/{ad_id}
+   #### GET/api/v1/equation/{formula}}
 ```
 https://api.bitcoin.global/api/v1/equation/{formula}
 ```
@@ -393,6 +404,253 @@ curl --location -g --request GET 'https://api.bitcoin.global/api/v1/equation/{fo
 ```
 
 ## Wallet
+   ## Codes
+   ### Create a WB code
+   #### POST/api/bg-wallet/wallet/codes
+```
+https://api.bitcoin.global/api/bg-wallet/wallet/codes
+```
+Allows API user to create a WB code.
 
+**HEADERS**
+
+X-API-KEY | {{apiKey}} 
+------------ | ------------ 
+X-ACCESS-TIMESTAMP| {{nonce}}
+X-ACCESS-SIGN|  {{signature}}
+
+**BODY** raw
+```
+{
+    "code": {
+        "amount": "50",
+        "ticker": "USDT",
+        "passphrase": "strongpass",
+        "description": "randomtext"
+    }
+}
+```
+
+**Example request**
+```
+curl --location --request POST 'https://api.bitcoin.global/api/bg-wallet/wallet/codes' \
+--header 'X-API-KEY: {{apiKey}}' \
+--header 'X-ACCESS-TIMESTAMP: {{nonce}}' \
+--header 'X-ACCESS-SIGN: {{signature}}' \
+--data-raw '{
+    "code": {
+        "amount": "50",
+        "ticker": "USDT",
+        "passphrase": "strongpass",
+        "description": "randomtext"
+    }
+}'
+```
+ ### Apply WB code
+   #### POST/api/bg-wallet/wallet/apply-code
+```
+https://api.bitcoin.global/api/bg-wallet/wallet/apply-code
+```
+Allows API user to activate a WB code.
+
+**HEADERS**
+
+X-API-KEY | {{apiKey}} 
+------------ | ------------ 
+X-ACCESS-TIMESTAMP| {{nonce}}
+X-ACCESS-SIGN|  {{signature}}
+
+**BODY** raw
+```
+{
+    "code" : "WBe11f4fce-2a53-4edc-b195-66b693bd77e3USDT",
+    "passphrase": "strongpass"
+}
+```
+
+**Example request**
+```
+curl --location --request POST 'https://api.bitcoin.global/api/bg-wallet/wallet/apply-code' \
+--header 'X-API-KEY: {{apiKey}}' \
+--header 'X-ACCESS-TIMESTAMP: {{nonce}}' \
+--header 'X-ACCESS-SIGN: {{signature}}' \
+--data-raw '{
+    "code" : "WBe11f4fce-2a53-4edc-b195-66b693bd77e3USDT",
+    "passphrase": "strongpass"
+}'
+```
+### Currency Balance
+   #### GET/api/simple-wallet/wallet/balance
+```
+https://api.bitcoin.global/api/simple-wallet/wallet/balance?currency=BTC
+```
+
+**HEADERS**
+
+X-API-KEY | {{apiKey}} 
+------------ | ------------ 
+X-ACCESS-TIMESTAMP| {{nonce}}
+X-ACCESS-SIGN|  {{signature}}
+
+**BODY** urlencoded
+
+currency| BTC
+------------ | ------------
+
+
+**Example request**
+```
+curl --location --request GET 'https://api.bitcoin.global/api/simple-wallet/wallet/balance?currency=BTC' \
+--header 'X-API-KEY: {{apiKey}}' \
+--header 'X-ACCESS-TIMESTAMP: {{nonce}}' \
+--header 'X-ACCESS-SIGN: {{signature}}'
+```
+### Generate address
+   #### POST/api/simple-wallet/wallet/address/generate
+```
+https://api.bitcoin.global/api/simple-wallet/address/generate
+```
+
+**HEADERS**
+
+X-API-KEY | {{apiKey}} 
+------------ | ------------ 
+X-ACCESS-TIMESTAMP| {{nonce}}
+X-ACCESS-SIGN|  {{signature}}
+
+**BODY** raw
+```
+{
+    "currency": "USDT",
+    "network": "TRC20",
+    "label": "label_name",
+    "ipn_url": "https://yourwebsite.com/..."
+}
+```
+**Example request**
+```
+curl --location --request POST 'https://api.bitcoin.global/api/simple-wallet/address/generate' \
+--header 'X-API-KEY: {{apiKey}}' \
+--header 'X-ACCESS-TIMESTAMP: {{nonce}}' \
+--header 'X-ACCESS-SIGN: {{signature}}' \
+--data-raw '{
+    "currency": "USDT",
+    "network": "TRC20",
+    "label": "label_name",
+    "ipn_url": "https://yourwebsite.com/..."
+}'
+```
+### Create Withdraw
+   #### POST/api/simple-wallet/wallet/create_whithdrawal
+```
+https://api.bitcoin.global/api/simple-wallet/wallet/create_withdrawal
+```
+
+**HEADERS**
+
+X-API-KEY | {{apiKey}} 
+------------ | ------------ 
+X-ACCESS-TIMESTAMP| {{signature}}
+X-ACCESS-SIGN| {{nonce}}
+
+**BODY** raw
+```
+{
+    "currency": "USDT",
+    "network": "ERC20", //or "TRC20"
+    "address": "USDT_address",
+    "amount": "0.002",
+    "description": "random text", //optional
+    "dest_tag": "1390985919", //required for some currencies
+    "priority": "low" //low or medium or high
+}
+```
+**Example request**
+```
+curl --location --request POST 'https://api.bitcoin.global/api/simple-wallet/wallet/create_withdrawal' \
+--header 'X-API-KEY: {{apiKey}}' \
+--header 'X-ACCESS-TIMESTAMP: {{signature}}' \
+--header 'X-ACCESS-SIGN: {{nonce}}' \
+--data-raw '{
+    "currency": "USDT",
+    "network": "ERC20", //or "TRC20"
+    "address": "USDT_address",
+    "amount": "0.002",
+    "description": "random text", //optional
+    "dest_tag": "1390985919", //required for some currencies
+    "priority": "low" //low or medium or high
+}'
+```
+### Transactions
+   #### POST/api/simple-wallet/wallet/transactions
+```
+https://api.bitcoin.global/api/simple-wallet/wallet/transactions
+```
+
+**HEADERS**
+
+X-API-KEY | {{apiKey}} 
+------------ | ------------ 
+X-ACCESS-TIMESTAMP| {{nonce}}
+X-ACCESS-SIGN|  {{signature}}
+
+**BODY** raw
+```
+{
+    "id": "transaction_id"
+}
+```
+**Example request**
+```
+curl --location --request POST 'https://api.bitcoin.global/api/simple-wallet/wallet/transaction' \
+--header 'X-API-KEY: {{apiKey}}' \
+--header 'X-ACCESS-TIMESTAMP: {{nonce}}' \
+--header 'X-ACCESS-SIGN: {{signature}}' \
+--data-raw '{
+    "id": "transaction_id"
+}'
+```
+
+### Adresses
+   #### GET/api/simple-wallet/wallet/addresses
+```
+https://api.bitcoin.global/api/simple-wallet/wallet/addresses
+```
+
+**HEADERS**
+
+X-API-KEY | {{apiKey}} 
+------------ | ------------ 
+X-ACCESS-TIMESTAMP| {{nonce}}
+X-ACCESS-SIGN|  {{signature}}
+
+**Example request**
+```
+curl --location --request GET 'https://api.bitcoin.global/api/simple-wallet/wallet/addresses' \
+--header 'X-API-KEY: {{apiKey}}' \
+--header 'X-ACCESS-TIMESTAMP: {{nonce}}' \
+--header 'X-ACCESS-SIGN: {{signature}}'
+```
 ## Trade
-      
+   ### Deals
+   #### GET/api/v1/dashboard
+  
+```
+https://api.bitcoin.global/api/v1/dashboard
+```
+This endpoint retrieves open deals for your account.
+
+**HEADERS**
+
+Apiauth-Key| {{apiKey}} 
+------------ | ------------ 
+Apiauth-Signature| {{signature}}
+Apiauth-Nonce| {{nonce}}
+
+**Example request**
+```
+curl --location --request GET 'https://api.bitcoin.global/api/v1/dashboard' \
+--header 'Apiauth-Key: {{apiKey}}' \
+--header 'Apiauth-Signature: {{signature}}' \
+--header 'Apiauth-Nonce: {{nonce}}'
+```
