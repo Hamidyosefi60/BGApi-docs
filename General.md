@@ -1,4 +1,4 @@
-# Official Documentation of Bitcoin Global API
+# General endpoints
 
 * [General](#general)
     * [Payment methods](#payment-methods)
