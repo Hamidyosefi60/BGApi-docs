@@ -5,7 +5,7 @@
     * [Payment methods for country](#payment-methods-for-country)
     * [Countrycodes](#countrycodes)
     * [currencies](#currencies)
-* [ADS](/ads.md)
+* [ADS](/Ads.md)
     * [Ads](#ads)
     * [Info for order](#info-for-order)
     * [Info for definite order list](#info-for-definite-order-list)
@@ -14,7 +14,7 @@
     * [Delete an advertisement](#delete-an-advertisement)
     * [Update equation](#update-equation)
     * [Specified equation](#specified-equation)
- * [Wallet](/wallet.md)
+ * [Wallet](/Wallet.md)
  * [Codes](#codes)
     * [Create a WB code](#create-a-wb-code)
     * [Apply WB code](#apply-wb-code)
@@ -23,7 +23,7 @@
     * [Create Withdraw](#create-withdraw)
     * [Transactions](#Transactions)
     * [Adresses](#Adresses)
- * [Trade](/trade.md)
+ * [Trade](/Trade.md)
     * [Deals](#deals)
 
 
