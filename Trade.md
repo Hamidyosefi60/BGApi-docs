@@ -28,5 +28,10 @@ curl --location --request GET 'https://api.bitcoin.global/api/v1/dashboard' \
 ```
 **Responce**
 ```
-
+{
+    "data": {
+        "contact_list": []
+    },
+    "contact_count": 0
+}
 ```
