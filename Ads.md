@@ -42,7 +42,107 @@ curl --location -g --request GET 'https://api.bitcoin.global/api/v1/ads?countryc
 ```
 **Responce**
 ```
-
+{
+    "data": {
+        "ad_list": {
+            "data": [
+                {
+                    "ad_id": "2980f546-29b6-4bed-a682-6f9a32838179",
+                    "countrycode": "UA",
+                    "currency": "UAH",
+                    "max_amount": null,
+                    "min_amount": null,
+                    "max_amount_available": "10",
+                    "online_provider": "NATIONAL_BANK",
+                    "profile": {
+                        "username": "Bodya003",
+                        "feedback_score": "0",
+                        "trade_count": 3,
+                        "last_online": "2021-09-06T21:28:50+00:00",
+                        "name": "Bodya003 (3; 0%)"
+                    },
+                    "bank_name": null,
+                    "trade_type": "ONLINE_SELL",
+                    "payment_window_minutes": null,
+                    "display_reference": true,
+                    "created_at": "2021-07-27T12:21:13+00:00",
+                    "require_feedback_score": 0,
+                    "msg": "xbcvxdfvb",
+                    "account_info": "cvbxcvb",
+                    "volume_coefficient_btc": "1.000000000000000000",
+                    "temp_price": "51890.42",
+                    "temp_price_usd": "51890.42",
+                    "hidden_by_opening_hours": false,
+                    "require_identification": false,
+                    "is_local_office": false,
+                    "first_time_limit_btc": null,
+                    "city": "",
+                    "location_string": "Ukraine",
+                    "opening_hours": null,
+                    "lon": 0,
+                    "sms_verification_required": false,
+                    "require_trade_volume": "0",
+                    "limit_to_fiat_amounts": null,
+                    "require_trusted_by_advertiser": false,
+                    "track_max_amount": false,
+                    "lat": 0,
+                    "price_equation": "btc_in_usdt",
+                    "visible": false,
+                    "atm_model": null,
+                    "reference_code": "ZTc1NzE1",
+                    "reference_type": "SHORT"
+                },
+                {
+                    "ad_id": "e0578e5e-a488-419f-98f8-962d406cb78f",
+                    "countrycode": "UA",
+                    "currency": "UAH",
+                    "max_amount": "1000",
+                    "min_amount": "100",
+                    "max_amount_available": "10",
+                    "online_provider": "MONOBANK",
+                    "profile": {
+                        "username": "Bodya003",
+                        "feedback_score": "0",
+                        "trade_count": 3,
+                        "last_online": "2021-09-06T21:28:50+00:00",
+                        "name": "Bodya003 (3; 0%)"
+                    },
+                    "bank_name": null,
+                    "trade_type": "ONLINE_SELL",
+                    "payment_window_minutes": null,
+                    "display_reference": true,
+                    "created_at": "2021-09-05T21:44:20+00:00",
+                    "require_feedback_score": 0,
+                    "msg": "-",
+                    "account_info": "000",
+                    "volume_coefficient_btc": "1.000000000000000000",
+                    "temp_price": "57079.462",
+                    "temp_price_usd": "57079.462",
+                    "hidden_by_opening_hours": false,
+                    "require_identification": false,
+                    "is_local_office": false,
+                    "first_time_limit_btc": null,
+                    "city": "",
+                    "location_string": "Ukraine",
+                    "opening_hours": null,
+                    "lon": 0,
+                    "sms_verification_required": false,
+                    "require_trade_volume": "0",
+                    "limit_to_fiat_amounts": null,
+                    "require_trusted_by_advertiser": false,
+                    "track_max_amount": false,
+                    "lat": 0,
+                    "price_equation": "btc_in_usdt*1.1",
+                    "visible": false,
+                    "atm_model": null,
+                    "reference_code": "OTUwYzhk",
+                    "reference_type": "SHORT"
+                }
+            ]
+        },
+        "ad_count": 2
+    }
+}
 ```
 ### Info for order
    #### GET/api/v1/ad-get/{id}
@@ -98,6 +198,61 @@ curl --location -g --request GET 'https://api.bitcoin.global/api/v1/ad-get?ads={
 ```
 **Responce**
 ```
+{
+    "data": {
+        "ad_list": {
+            "data": [
+                {
+                    "ad_id": "{ad_id}",
+                    "countrycode": "UA",
+                    "currency": "UAH",
+                    "max_amount": null,
+                    "min_amount": null,
+                    "max_amount_available": "10",
+                    "online_provider": "NATIONAL_BANK",
+                    "profile": {
+                        "username": "username",
+                        "feedback_score": "0",
+                        "trade_count": 3,
+                        "last_online": "2021-09-06T21:32:57+00:00",
+                        "name": "Bodya003 (3; 0%)"
+                    },
+                    "bank_name": null,
+                    "trade_type": "ONLINE_SELL",
+                    "payment_window_minutes": null,
+                    "display_reference": true,
+                    "created_at": "2021-07-27T12:21:13+00:00",
+                    "require_feedback_score": 0,
+                    "msg": "xbcvxdfvb",
+                    "account_info": "cvbxcvb",
+                    "volume_coefficient_btc": "1.000000000000000000",
+                    "temp_price": "51854.04",
+                    "temp_price_usd": "51854.04",
+                    "hidden_by_opening_hours": false,
+                    "require_identification": false,
+                    "is_local_office": false,
+                    "first_time_limit_btc": null,
+                    "city": "",
+                    "location_string": "Ukraine",
+                    "opening_hours": null,
+                    "lon": 0,
+                    "sms_verification_required": false,
+                    "require_trade_volume": "0",
+                    "limit_to_fiat_amounts": null,
+                    "require_trusted_by_advertiser": false,
+                    "track_max_amount": false,
+                    "lat": 0,
+                    "price_equation": "btc_in_usdt",
+                    "visible": false,
+                    "atm_model": null,
+                    "reference_code": "ZTc1NzE1",
+                    "reference_type": "SHORT"
+                }
+            ]
+        },
+        "ad_count": 1
+    }
+}
 ```
 ### Create an advertisment
    #### POST/api/v1/ad-create
