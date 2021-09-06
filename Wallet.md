@@ -215,7 +215,17 @@ curl --location --request POST 'https://api.bitcoin.global/api/simple-wallet/wal
 ```
 **Responce**
 ```
-
+{
+    "id": 45307654446708017,
+    "amount": "0.01",
+    "address": "address",
+    "dest_tag": "",
+    "currency": "BTC",
+    "status": "pending",
+    "blockchain_hash": null,
+    "fee": "0.000010000000000000",
+    "error": "ok"
+}
 ```
 ### Transactions
    #### POST/api/simple-wallet/wallet/transactions
@@ -248,6 +258,11 @@ curl --location --request POST 'https://api.bitcoin.global/api/simple-wallet/wal
 ```
 **Responce**
 ```
+{
+    "error": "ok",
+    "count": 0,
+    "result": []
+}
 ```
 ### Adresses
    #### GET/api/simple-wallet/wallet/addresses
@@ -271,5 +286,17 @@ curl --location --request GET 'https://api.bitcoin.global/api/simple-wallet/wall
 ```
 **Responce**
 ```
-
+{
+    "error": "ok",
+    "result": [
+        {
+            "address": "GMBY9bZLNCFNuwJWS4pP3rcHAoWBWvqJcm",
+            "label": null,
+            "dest_tag": "",
+            "ipn_url": null,
+            "currency": "BTC",
+            "network": "BTC"
+        }
+    ]
+}
 ```
