@@ -41,6 +41,7 @@
             1. **'request'** - a request path without the domain name. Example: `'/api/v1/simple-wallet/wallet/balances'`.
             2. **'nonce'** - a number that is always **larger** than the previous request’s nonce number. Example: `'1594297865'`. A good method of creating a **nonce** is to use the unix timestamp in milliseconds. This way you'll always get an incrementing number, but make sure not to send two API calls at the same time, otherwise their nonce will be identical.
             3. **params of request** - Example: `'ticker': 'BTC'`
+            4. 
         2. Headers:
             1. `'Content-type': 'application/json'`
             2. `'X-TXC-APIKEY': api_key` - where api_key is your public WhiteBit API key
