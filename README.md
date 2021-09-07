@@ -10,7 +10,7 @@
     * [Info for order](/Ads.md#info-for-order)
     * [Info for definite order list](/Ads.md#info-for-definite-order-list)
     * [Create an advertisment](/Ads.md#create-an-advertisement)
-    * [Update an advertisement]/Ads.md#update-an-advertisement)
+    * [Update an advertisement](/Ads.md#update-an-advertisement)
     * [Delete an advertisement](/Ads.md#delete-an-advertisement)
     * [Update equation](/Ads.md#update-equation)
     * [Specified equation](/Ads.md#specified-equation)
