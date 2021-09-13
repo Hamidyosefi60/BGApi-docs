@@ -21,7 +21,7 @@ Returns a list of valid payment methods. Also contains name and code for payment
 Apiauth-Key| {{apiKey}} 
 ------------ | ------------ 
 Apiauth-Signature| {{signature}}
-Apiauth-Nonce| {{nonce}} 
+Apiauth-Nonce| {{nonce}}
 
 **Example request**
 ```
