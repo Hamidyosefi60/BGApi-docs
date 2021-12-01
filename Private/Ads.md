@@ -158,6 +158,7 @@ curl --location -g --request GET 'https://api.bitcoin.global/api/v1/ads?countryc
     }
 }
 ```
+   
 </details>
 
 
@@ -353,6 +354,7 @@ curl --location --request POST 'https://api.bitcoin.global/api/v1/ad-create' \
     "ad_id": "9d0534ad-e86b-46fe-91d9-71301991a2de"
 }
 ```
+
 <details>
 <summary><b>Errors:</b></summary>
    
@@ -380,7 +382,7 @@ curl --location --request POST 'https://api.bitcoin.global/api/v1/ad-create' \
 }
 ```
    
-   ```
+   ```json5
    {
     "errors": {
         "opening_hours": "Data cannot have negative values."
@@ -388,7 +390,7 @@ curl --location --request POST 'https://api.bitcoin.global/api/v1/ad-create' \
 }
 ```
    
-   ```
+   ```json5
    {
     "errors": {
         "opening_hours": "Hour parameters must be divisible by 4, e.g. 4 or 8, or 12"
@@ -396,7 +398,7 @@ curl --location --request POST 'https://api.bitcoin.global/api/v1/ad-create' \
 }
 ```
    
-   ```
+   ```json5
    {
     "errors": {
         "opening_hours": "The hour of the start cannot be more than the hour of the end"
@@ -404,7 +406,7 @@ curl --location --request POST 'https://api.bitcoin.global/api/v1/ad-create' \
 }
 ```
    
-    ```
+  ```json5
   {
     "errors": [
         "No enough money on balance for order fee"
@@ -413,7 +415,6 @@ curl --location --request POST 'https://api.bitcoin.global/api/v1/ad-create' \
 ```
    
 </details>
-
 
    
 ### Update an advertisment
