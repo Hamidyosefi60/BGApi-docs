@@ -144,6 +144,21 @@ curl --location -g --request GET 'https://api.bitcoin.global/api/v1/ads?countryc
     }
 }
 ```
+<details>
+<summary><b>Errors:</b></summary>
+   
+  ```
+{
+    "code": 0,
+    "message": "Validation failed",
+    "errors": {
+        "ticker": [
+            "The selected ticker is invalid."
+        ]
+    }
+}
+```
+</details>
 ### Info for order
    #### GET/api/v1/ad-get/{id}
 ```
