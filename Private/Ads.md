@@ -159,6 +159,8 @@ curl --location -g --request GET 'https://api.bitcoin.global/api/v1/ads?countryc
 }
 ```
 </details>
+___
+
 ### Info for order
    #### GET/api/v1/ad-get/{id}
 ```
