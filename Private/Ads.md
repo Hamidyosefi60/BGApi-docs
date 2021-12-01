@@ -353,6 +353,69 @@ curl --location --request POST 'https://api.bitcoin.global/api/v1/ad-create' \
     "ad_id": "9d0534ad-e86b-46fe-91d9-71301991a2de"
 }
 ```
+<details>
+<summary><b>Errors:</b></summary>
+   
+   ```json5
+{
+    "errors": {
+        "opening_hours": "You submitted more or less than 7 values, expected 7"
+    }
+}
+```
+   
+     ```json5
+{
+    "errors": {
+        "opening_hours": "JSON data invalid!"
+    }
+}
+```
+   
+   ```json5
+{
+    "errors": {
+        "opening_hours": "The maximum value can be 92. This is equivalent to 23:00"
+    }
+}
+```
+   
+   ```
+   {
+    "errors": {
+        "opening_hours": "Data cannot have negative values."
+    }
+}
+```
+   
+   ```
+   {
+    "errors": {
+        "opening_hours": "Hour parameters must be divisible by 4, e.g. 4 or 8, or 12"
+    }
+}
+```
+   
+   ```
+   {
+    "errors": {
+        "opening_hours": "The hour of the start cannot be more than the hour of the end"
+    }
+}
+```
+   
+    ```
+  {
+    "errors": [
+        "No enough money on balance for order fee"
+    ]
+}
+```
+   
+</details>
+
+
+   
 ### Update an advertisment
    #### POST/api/v1/ad/{ad_id}
 ```
