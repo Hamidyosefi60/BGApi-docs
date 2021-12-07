@@ -1,11 +1,11 @@
 # Official Documentation of Bitcoin Global API
 
-* [General](/General.md)
-    * [Payment methods](/General.md#payment-methods)
-    * [Payment methods for country](/General.md#payment-methods-for-country)
-    * [Countrycodes](/General.md#countrycodes)
-    * [currencies](/General.md#currencies)
-* [ADS](/Private/Ads.md)
+* [General](/Private/General.md)
+    * [Payment methods](/Private/General.md#payment-methods)
+    * [Payment methods for country](/Private/General.md#payment-methods-for-country)
+    * [Countrycodes](/Private/General.md#countrycodes)
+    * [currencies](/Private/General.md#currencies)
+* [ADS](/Private/Private/Ads.md)
     * [Ads](#ads)
     * [Info for order](/Private/Ads.md#info-for-order)
     * [Info for definite order list](/Private/Ads.md#info-for-definite-order-list)
