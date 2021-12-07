@@ -45,7 +45,7 @@
             1. `'Content-type': 'application/json'`
             2. `'Apiauth-Key': {{apiKey}}` - where api_key is your public Bitcoin Global API key
             3. `'Apiauth-Nonce': {{nonce}}` - where nonce is  number that is always **larger** than the previous request’s nonce number from your json body
-            4. `'Apiauth-Signature': {{signature}}` - where signature is `hex(HMAC_SHA512(payload), key=api_secret))`
+            4. `'Apiauth-Signature': {{signature}}` - where signature is `hex(HMAC_SHA256 (payload)('utf-8'), key=api_secret, encoded('utf-8'))`
         3. To help you get started with our API, we've created the [API Quick start helper](https://github.com/bohdanBG/BGapi_quickstart) library. It supports the following languages:
             1. ``Go``
             2. ``NodeJS``
